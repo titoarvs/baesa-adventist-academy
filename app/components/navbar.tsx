@@ -35,7 +35,11 @@ export default function Navbar() {
         {navItems.map((item) => (
           <a
             key={item}
-            href={`#${item.toLowerCase()}`}
+            href={`${
+              ["Announcement", "About"].includes(item)
+                ? `/#${item.toLowerCase()}`
+                : `/${item.toLowerCase()}`
+            }`}
             className="text-white font-semibold hover:text-yellow-400 transition-colors"
           >
             {item}
